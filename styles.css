@@ -1,6 +1,7 @@
 body{
     display: flex;
     justify-content: center;
+    font-size: 40px;
 }
 
 #everythang {
@@ -9,7 +10,7 @@ body{
     flex-wrap: wrap;
     border: solid black;
     width: 400px;
-    height: 500px;
+    height: 600px;
     padding: 30px;
     background-color: green;
     border-radius: 12px;
@@ -17,10 +18,10 @@ body{
 
 .display {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
     width: 400px;
-    height: 70px;
+    height: 150px;
     border: black;
     border-radius: 12px;
     background-color: white;
@@ -32,15 +33,15 @@ body{
     height: 75px;
 }
 
-.clear-button, .delete{
-    width: 190px;
-    height: 100px;
-    font-size: 45px;
+#clear, #delete{
+    width: 150px;
+    height: 75px;
+    font-size: 25px;
     border: 4px black solid;
     background-color: red;
 }
 
-.delete{
+#delete{
     background-color: grey;
 }
 
@@ -49,7 +50,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     width: 400px;
-    height: 400px;
+    height: 440px;
     gap: 8px;
     margin: 5px;
 }
