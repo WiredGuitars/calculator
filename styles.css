@@ -1,5 +1,61 @@
-#everything {
+body{
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+#everythang {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: solid black;
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    background-color: green;
+    border-radius: 12px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    height: 70px;
+    border: black;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.num{
+    font-size: 30px;
+    width: 75px;
+    height: 75px;
+}
+
+.clear-button, .delete{
+    width: 190px;
+    height: 100px;
+    font-size: 45px;
+    border: 4px black solid;
+    background-color: red;
+}
+
+.delete{
+    background-color: grey;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    gap: 8px;
+    margin: 5px;
+}
+
+.clear-delete{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
 }
