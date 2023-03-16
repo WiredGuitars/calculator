@@ -11,20 +11,20 @@ body{
     border: solid black;
     width: 400px;
     height: 600px;
-    padding: 30px;
+    padding: 40px;
     background-color: green;
     border-radius: 12px;
 }
 
 .display {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
     width: 400px;
     height: 150px;
-    border: black;
     border-radius: 12px;
     background-color: white;
+    border-radius: 12px;
+
 }
 
 .num{
@@ -57,6 +57,21 @@ body{
 
 .clear-delete{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 400px;
+}
+.priorDisplay{
+    display: flex;
+    justify-content: flex-end;
+    height: 75px;
+    width: 390px;
+    border-radius: 12px;
+}
+.currentDisplay{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 75px;
+    width: 390px;
+    border-radius: 12px;
 }
