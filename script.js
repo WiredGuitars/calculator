@@ -340,3 +340,34 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+document.addEventListener("keydown", function (event) {
+  if (event.key === "/") {
+    if (initDisplay !== 0) {
+      secondValue = parseFloat(initDisplay);
+      priorDisplay.textContent = secondValue + " /";
+      initDisplay = 0;
+      operator = "/";
+      display.textContent = initDisplay;
+    }
+  }
+});document.addEventListener("keydown", function (event) {
+  if (event.key === "*") {
+    if (initDisplay !== 0) {
+      secondValue = parseFloat(initDisplay);
+      priorDisplay.textContent = secondValue + " *";
+      initDisplay = 0;
+      operator = "*";
+      display.textContent = initDisplay;
+    }
+  }
+});document.addEventListener("keydown", function (event) {
+  if (event.key === "-") {
+    if (initDisplay !== 0) {
+      secondValue = parseFloat(initDisplay);
+      priorDisplay.textContent = secondValue + " -";
+      initDisplay = 0;
+      operator = "-";
+      display.textContent = initDisplay;
+    }
+  }
+});
