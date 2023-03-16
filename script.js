@@ -1,6 +1,6 @@
 let initDisplay = 0;
-let secondValue = ""
-let operator = null
+let secondValue = "";
+let operator = null;
 
 const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
@@ -23,7 +23,6 @@ const zeroButton = document.getElementById("0");
 const decimalButton = document.getElementById(".");
 const priorDisplay = document.querySelector(".priorDisplay");
 
-priorDisplay.textContent = secondValue;
 display.textContent = initDisplay;
 
 function add(num1, num2) {
@@ -127,15 +126,21 @@ oneButton.addEventListener("click", function () {
 });
 
 clearButton.addEventListener("click", function () {
+  if (secondValue) {
+    secondValue = "";
+    initDisplay = 0;
+    display.textContent = initDisplay;
+    priorDisplay.textContent = secondValue;
+  }
   initDisplay = 0;
   display.textContent = initDisplay;
 });
-document.addEventListener("keydown", function(event){
-    if (event.key === "Delete"){
-        initDisplay = 0;
-        display.textContent = initDisplay;
-    }
-})
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Delete") {
+    initDisplay = 0;
+    display.textContent = initDisplay;
+  }
+});
 deleteButton.addEventListener("click", function () {
   if (parseFloat(initDisplay) <= 9 && parseFloat(initDisplay) >= -9) {
     initDisplay = 0;
@@ -239,6 +244,16 @@ document.addEventListener("keydown", function (event) {
   }
 });
 document.addEventListener("keydown", function (event) {
+  if (event.key === "0") {
+    if (initDisplay == 0) {
+      initDisplay = "0";
+    } else {
+      initDisplay += "0";
+    }
+    display.textContent = initDisplay;
+  }
+});
+document.addEventListener("keydown", function (event) {
   if (event.key === "Backspace") {
     if (parseFloat(initDisplay) <= 9 && parseFloat(initDisplay) >= -9) {
       initDisplay = 0;
@@ -261,19 +276,41 @@ decimalButton.addEventListener("click", function () {
 plusButton.addEventListener("click", function () {
   if (initDisplay !== 0) {
     secondValue = parseFloat(initDisplay);
-    priorDisplay.textContent = secondValue + " +"
+    priorDisplay.textContent = secondValue + " +";
     initDisplay = 0;
-    operator = "+"
-    display.textContent = initDisplay
+    operator = "+";
+    display.textContent = initDisplay;
   }
 });
-// equalButton.addEventListener("click", function(){
-//     if (secondValue !== "" && initDisplay !== 0) {
-//         operate()
-
-//     }
-// })
-equalButton.addEventListener("click", function() {
+subtractButton.addEventListener("click", function () {
+  if (initDisplay !== 0) {
+    secondValue = parseFloat(initDisplay);
+    priorDisplay.textContent = secondValue + " -";
+    initDisplay = 0;
+    operator = "-";
+    display.textContent = initDisplay;
+  }
+});
+divideButton.addEventListener("click", function () {
+  if (initDisplay !== 0) {
+    secondValue = parseFloat(initDisplay);
+    priorDisplay.textContent = secondValue + " /";
+    initDisplay = 0;
+    operator = "/";
+    display.textContent = initDisplay;
+  }
+});
+timesButton.addEventListener("click", function () {
+  if (initDisplay !== 0) {
+    secondValue = parseFloat(initDisplay);
+    priorDisplay.textContent = secondValue + " *";
+    initDisplay = 0;
+    operator = "*";
+    display.textContent = initDisplay;
+  }
+});
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
     if (operator && secondValue) {
       initDisplay = operate(operator, secondValue, initDisplay);
       display.textContent = initDisplay;
@@ -281,17 +318,25 @@ equalButton.addEventListener("click", function() {
       operator = null;
       priorDisplay.textContent = secondValue;
     }
-  });
-  
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      if (operator && secondValue) {
-        initDisplay = operate(operator, secondValue, initDisplay);
-        display.textContent = initDisplay;
-        secondValue = "";
-        operator = null;
-        priorDisplay.textContent = secondValue;
-      }
+  }
+});
+equalButton.addEventListener("click", function () {
+  if (operator && secondValue) {
+    initDisplay = operate(operator, secondValue, initDisplay);
+    display.textContent = initDisplay;
+    secondValue = "";
+    operator = null;
+    priorDisplay.textContent = secondValue;
+  }
+});
+document.addEventListener("keydown", function (event) {
+  if (event.key === "+") {
+    if (initDisplay !== 0) {
+      secondValue = parseFloat(initDisplay);
+      priorDisplay.textContent = secondValue + " +";
+      initDisplay = 0;
+      operator = "+";
+      display.textContent = initDisplay;
     }
-  });
-  
+  }
+});
